@@ -26,7 +26,48 @@ public class RomanNumerals {
             int number = letterToNumber(letter);
 
             if (number < 0)
-                throw new NumberFormatException("Отрицательное число!!!");
+                break;
+
+            i++;
+
+            if (i == roman.length()) {
+                arabic += number;
+            } else {
+                int nextNumber = letterToNumber(roman.charAt(i));
+                if (nextNumber > number) {
+                    arabic += (nextNumber - number);
+                    i++;
+                } else {
+                    arabic += number;
+                }
+            }
+
+        }
+
+        if (arabic > 3999)
+            throw new NumberFormatException("Больше 4000");
+
+        num = arabic;
+
+    }
+    public RomanNumerals(String roman, int start) {
+
+
+        if (roman.length() == 0)
+            throw new NumberFormatException("Вы ввели пустую строку");
+
+        roman = roman.toUpperCase();
+
+        int i = start;
+        int arabic = 0;
+
+        while (i < roman.length()) {
+
+            char letter = roman.charAt(i);
+            int number = letterToNumber(letter);
+
+            if (number < 0)
+                break;
 
             i++;
 
@@ -71,6 +112,17 @@ public class RomanNumerals {
             default:
                 return -1;
         }
+    }
+    public int length(){
+        String roman = "";
+        int N = num;
+        for (int i = 0; i < numbers.length; i++) {
+            while (N >= numbers[i]) {
+                roman += letters[i];
+                N -= numbers[i];
+            }
+        }
+        return roman.length();
     }
         public String toString () {
             String roman = "";

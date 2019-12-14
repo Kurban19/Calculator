@@ -21,4 +21,25 @@ public class Calculating {
         }
         return result;
     }
+
+    public static char findOperator(String in) {
+        char[] chars = in.toCharArray();
+        char Operator = 'f';
+        for (int i = 0; i < chars.length; i++) {
+            Operator = chars[i];
+            switch (Operator) {
+                case '+':
+                    return Operator;
+                case '-':
+                    return Operator;
+                case '*':
+                    return Operator;
+                case '/':
+                    return Operator;
+                default:
+                    continue;
+            }
+        }
+        return 'g';
+    }
 }
