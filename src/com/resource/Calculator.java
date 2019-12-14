@@ -13,11 +13,6 @@ public class Calculator {
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите ваши числа");
         String input = scan.nextLine();
-            //Num1 = Integer.parseInt(String.valueOf(input.charAt(0)));
-            //Num2 = Integer.parseInt(String.valueOf(input.charAt(2)));
-            //Operator = input.charAt(1);
-            //Answer = Calculating.solving(Num1, Num2, Operator);
-            //System.out.println(Answer);
 try {
 
 
