@@ -1,5 +1,6 @@
 package com.resource;
 
+
 public class RomanNumerals {
     private int num;
 
@@ -11,9 +12,13 @@ public class RomanNumerals {
 
     public RomanNumerals(String roman) {
 
-
         if (roman.length() == 0)
             throw new NumberFormatException("Вы ввели пустую строку");
+
+        if(Character.isDigit(roman.charAt(0))){
+            throw new IllegalArgumentException();
+        }
+
 
         roman = roman.toUpperCase();
 
@@ -52,9 +57,14 @@ public class RomanNumerals {
     }
     public RomanNumerals(String roman, int start) {
 
-
         if (roman.length() == 0)
             throw new NumberFormatException("Вы ввели пустую строку");
+
+
+        if(Character.isDigit(roman.charAt(3))){
+            throw new IllegalArgumentException();
+        }
+
 
         roman = roman.toUpperCase();
 
@@ -138,6 +148,13 @@ public class RomanNumerals {
         public int toInt(){
             return num;
         }
+    public boolean isNumber(String str) {
+        if (str == null || str.isEmpty()) return false;
+        for (int i = 0; i < str.length(); i++) {
+            if (!Character.isDigit(str.charAt(i))) return false;
+        }
+        return true;
+    }
 }
 
 

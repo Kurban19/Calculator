@@ -1,23 +1,23 @@
 package com.resource;
 
-import javax.crypto.spec.OAEPParameterSpec;
 import java.util.Scanner;
 
 public class Calculator {
     public static void main(String args[]) {
         int Num1 = 0;
         int Answer = 0;
-        char Operator = 'v';
+        char Operator = 't';
         int Num2 = 0;
         String op;
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите ваши числа");
         String input = scan.nextLine();
+
 try {
 
 
     RomanNumerals firstNum = new RomanNumerals(input);
-    if (2 == firstNum.length()) {
+    if (2 == firstNum.length()){
         RomanNumerals secondNum = new RomanNumerals(input, 3);
         Operator = Calculating.findOperator(input);
 
@@ -26,7 +26,8 @@ try {
 
         Answer = Calculating.solving(Num1, Num2, Operator);
         System.out.println(ArabicNumerals.arabicToRoman(Answer));
-    } else {
+    }
+    else {
         RomanNumerals secondNum = new RomanNumerals(input, 2);
         Operator = Calculating.findOperator(input);
 
@@ -45,5 +46,6 @@ catch (IllegalArgumentException e){
     System.out.println(Answer);
 }
         }
+
     }
 
